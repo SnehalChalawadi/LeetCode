@@ -3,6 +3,10 @@ class Solution {
         int i=0;
         for(int j=0;j<t.length();j++)
         {
+            if(s.length()==0)
+            {
+                return true;
+            }
             if(i <= s.length() && s.charAt(i)==t.charAt(j))
             {
                 i++;
