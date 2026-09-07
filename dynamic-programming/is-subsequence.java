@@ -3,7 +3,7 @@ class Solution {
         int i=0;
         for(int j=0;j<t.length();j++)
         {
-            if(s.charAt(i)==t.charAt(j) && (!s.isEmpty()))
+            if((!s.isEmpty()) && s.charAt(i)==t.charAt(j))
             {
                 i++;
             }
