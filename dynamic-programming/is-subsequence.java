@@ -7,7 +7,7 @@ class Solution {
             {
                 return true;
             }
-            if(i <= s.length() && s.charAt(i)==t.charAt(j))
+            if(i < s.length() && s.charAt(i)==t.charAt(j))
             {
                 i++;
             }
