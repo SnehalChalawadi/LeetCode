@@ -5,7 +5,7 @@ class Solution {
             int max=nums[i];
             int min=nums[i];
             int j=0;
-            while(j<=0)
+            while(j<=i)
             {
                 max=Math.max(max,nums[j]);
                 j++;
