@@ -2,21 +2,28 @@ class Solution {
     public int[] smallerNumbersThanCurrent(int[] nums) {
         int[] ans=new int[nums.length];
 
-        HashMap<Integer,Integer> map=new HashMap<>();
-
-        int[] sorted = nums.clone();
-        Arrays.sort(sorted);
-        for(int i=0;i<sorted.length;i++)
+        int count[]=new int[101];
+        for(int i=0;i<nums.length;i++)
         {
-            if(!map.containsKey(sorted[i]))
+            count[nums[i]]++;
+        }
+
+        for(int i=1;i<101;i++)
+        {
+            count[i]=count[i]+count[i-1];
+        }
+
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]==0)
             {
-                map.put(sorted[i],i);
+                ans[i]=0;
+            }
+            else{
+                ans[i]=count[nums[i]-1];
             }
         }
 
-        for(int i=0;i<nums.length;i++){
-            ans[i]=map.get(nums[i]);
-        }
         return ans;
     }
 }
