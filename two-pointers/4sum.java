@@ -24,9 +24,6 @@ class Solution {
                       {
                         ans.add(list);
                       }
-
-                      left++;
-                      right--;
                     }
 
                     if(sum<target)
