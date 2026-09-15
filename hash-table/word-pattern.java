@@ -7,6 +7,7 @@ class Solution {
         }
 
         HashMap<Character,String> map=new HashMap<>();
+        HashSet<String> set=new HashSet<>();
         for(int i=0;i<pattern.length();i++)
         {
             char ch=pattern.charAt(i);
@@ -17,8 +18,13 @@ class Solution {
                     return false;
                 }
             }
+            else if(set.contains(words[i]))
+            {
+                return false;
+            }
             else{
                 map.put(ch,words[i]);
+                set.add(words[i]);
             }
         }
         return true;
