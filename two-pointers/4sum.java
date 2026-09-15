@@ -6,27 +6,34 @@ class Solution {
         {
             for(int j=i+1;j<nums.length;j++)
             {
-                for(int k=j+1;k<nums.length;k++)
+                int left=j+1;
+                int right=nums.length-1;
+                while(left<right)
                 {
-                    for(int l=k+1;l<nums.length;l++)
+                    long sum=nums[i]+nums[j]+nums[left]+nums[right];
+                    if(sum==target)
                     {
-                        long sum = (long) nums[i] + nums[j] + nums[k] + nums[l];
-                        if(sum == target)
-                        {
-                            List<Integer> list=new ArrayList<>();
+                      List<Integer> list=new ArrayList<>();
 
-                            list.add(nums[i]);
-                            list.add(nums[j]);
-                            list.add(nums[k]);
-                            list.add(nums[l]);
-                            
-                            if(!ans.contains(list))
-                            {
-                                ans.add(list);
-                            }
-                            
-                        }
+                      list.add(nums[i]);
+                      list.add(nums[j]);
+                      list.add(nums[left]);
+                      list.add(nums[right]);
+
+                      if(!ans.contains(list))
+                      {
+                        ans.add(list);
+                      }
                     }
+
+                    if(sum<target)
+                    {
+                      left++;
+                    }
+                    else{
+                      right--;
+                    }
+
                 }
             }
         }
