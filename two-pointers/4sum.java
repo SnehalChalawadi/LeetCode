@@ -10,7 +10,8 @@ class Solution {
                 {
                     for(int l=k+1;l<nums.length;l++)
                     {
-                        if((nums[i]+nums[j]+nums[k]+ nums[l])== target)
+                        long sum = (long) nums[i] + nums[j] + nums[k] + nums[l];
+                        if(sum == target)
                         {
                             List<Integer> list=new ArrayList<>();
 
