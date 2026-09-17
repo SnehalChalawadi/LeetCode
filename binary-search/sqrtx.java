@@ -4,11 +4,12 @@ class Solution {
         int right=x;
         while(left<=right){
             int mid=left+(right-left)/2;
-            if((mid*mid)== x)
+            long square=(long)mid*mid;
+            if((square)== x)
             {
                 return mid;
             }
-            if((mid*mid)<x)
+            if((square)<x)
             {
                 left=mid+1;
             }
