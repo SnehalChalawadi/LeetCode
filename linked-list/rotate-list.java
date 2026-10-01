@@ -30,8 +30,8 @@ class Solution {
 
        current.next=head; 
        int steps=length-k;
-       current=head;
-       for(int i=1;i<steps;i++)
+    
+       for(int i=0;i<steps;i++)
        {
         current=current.next;
        }
